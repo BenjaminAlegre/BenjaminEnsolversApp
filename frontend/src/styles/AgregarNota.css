@@ -1,0 +1,79 @@
+
+.agregar-nota-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .custom-form {
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fad787;
+    margin-top: 50px;
+  }
+  
+  .custom-form h1 {
+    color: #333;
+  }
+  
+  .custom-form label {
+    color: #333;
+  }
+  
+  .custom-form input,
+  .custom-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .custom-form textarea {
+    height: 150px; 
+    width: 100%; 
+    resize: vertical; 
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .custom-form button,
+  .custom-form a {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-form button {
+    background-color: #2ecc71; 
+    color: #fff;
+    transition: background-color 0.3s ease, color 0s; 
+  }
+  
+  .custom-form button:hover {
+    background-color: #27ae60; 
+  }
+  
+  .custom-form a {
+    background-color: #e74c3c; 
+    color: #fff;
+    margin-left: 10px; 
+  }
+  
+  .custom-form a:hover {
+    background-color: #c0392b; 
+  }
+  

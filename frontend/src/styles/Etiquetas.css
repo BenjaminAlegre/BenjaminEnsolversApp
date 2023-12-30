@@ -1,0 +1,17 @@
+.list-group-item{
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px; 
+}
+
+.list-group-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  

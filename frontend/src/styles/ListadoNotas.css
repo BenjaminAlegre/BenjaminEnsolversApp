@@ -1,0 +1,102 @@
+body {
+    background:linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151)); 
+  }
+
+.listado-notas-container {
+    margin: 25px;
+    background-color: #d83636;
+    background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
+}
+  
+  
+  .container.text-center {
+    margin: 10px;
+  }
+  
+  .text-up {
+    margin-top: 10px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .card {
+    height: auto;
+    border-radius: 5px;
+    padding: 15px 20px 20px;
+    background: #fad787;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.listado-notas-container {
+    
+    margin: 50px;
+    background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
+  }
+  
+  .card-text {
+    
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .listado-notas-container .card-text  {
+    color: #000; 
+  }
+  .card-title{
+    color: #000;
+    
+  }
+.card-body {
+    max-height: 150px;
+    overflow-y: auto;
+}
+.card-title-name{
+    color: #000;
+    position: relative;
+}
+
+     
+    .t-stroke-shadow {
+        color: #85032e;
+        
+        text-shadow: 1px 1px 1px #000000;
+        font-style: italic;
+        font-weight: bolder;
+        word-spacing: 6px;
+        font-size: 34px;
+    }
+
+    .card-header {
+        position: absolute;
+      }
+      
+      .card-header .dropdown-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        
+      }
+
+    .dropdown {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color:rgb(221, 94, 137)
+    }
+
+    .dropdown-toggle{
+        color:rgb(221, 94, 137);
+        height: 40px ;
+    }
+
+    .btn-drop{
+        color:rgb(221, 94, 137);
+    }
+
+    .btn-filtro{
+        color:rgb(221, 94, 137);
+    }
+    
