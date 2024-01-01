@@ -6,6 +6,7 @@ import backend.backend.model.Nota;
 import backend.backend.service.EtiquetaService;
 import backend.backend.service.NotaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,20 +34,26 @@ public class NotaController {
     }
 
     @GetMapping("/activas")
-    public List<Nota> listarNotasActivas() {
-        return notaService.listarNotasActivas();
+    public ResponseEntity<List<Nota>> listarNotasActivas() {
+        List<Nota> notasActivas = notaService.listarNotasActivas();
+        return new ResponseEntity<>(notasActivas, HttpStatus.OK);
     }
 
     @GetMapping("/archivadas")
-    public List<Nota> listarNotasArchivadas() {
-        return notaService.listarNotasArchivadas();
+    public ResponseEntity<List<Nota>> listarNotasArchivadas() {
+        List<Nota> notasArchivadas = notaService.listarNotasArchivadas();
+        return new ResponseEntity<>(notasArchivadas, HttpStatus.OK);
     }
 
     @PostMapping
-    public Nota crearNota(@RequestBody NotaDTO nota) {
-        return notaService.crearNota(nota);
+    public ResponseEntity<Nota> crearNota(@RequestBody NotaDTO nota) {
+        try {
+            Nota notaCreada = notaService.crearNota(nota);
+            return new ResponseEntity<>(notaCreada, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
-
     @PutMapping("/editar/{id}")
     public ResponseEntity<Nota> editarNota(@PathVariable Long id, @RequestBody NotaDTO notaRecibida) {
         Nota nota = notaService.obtenerNotaPorId(id);
@@ -59,21 +66,34 @@ public class NotaController {
 
 
     @DeleteMapping("/{id}")
-    public void borrarNota(@PathVariable Long id) {
-        notaService.borrarNota(id);
+    public ResponseEntity<String> borrarNota(@PathVariable Long id) {
+        try {
+            notaService.borrarNota(id);
+            return new ResponseEntity<>("Borrado exitoso", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al borrar la nota: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping("/{id}/archivar")
-    public Nota archivarNota(@PathVariable Long id) {
-        return notaService.archivarNota(id);
+    public ResponseEntity<Nota> archivarNota(@PathVariable Long id) {
+        try {
+            Nota notaArchivada = notaService.archivarNota(id);
+            return new ResponseEntity<>(notaArchivada, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping("/{id}/desarchivar")
-    public Nota desarchivarNota(@PathVariable Long id) {
-        return notaService.desarchivarNota(id);
+    public ResponseEntity<Nota> desarchivarNota(@PathVariable Long id) {
+        try {
+            Nota notaDesarchivada = notaService.desarchivarNota(id);
+            return new ResponseEntity<>(notaDesarchivada, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
-
-
     @GetMapping("/{id}/etiquetas")
     public ResponseEntity<List<Etiqueta>> obtenerEtiquetasDeNota(@PathVariable Long id) {
         Nota nota = notaService.obtenerNotaPorId(id);
