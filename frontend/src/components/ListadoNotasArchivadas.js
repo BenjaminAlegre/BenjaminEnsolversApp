@@ -25,21 +25,13 @@ export default function ListadoNotas() {
     const desarchivarNota = async (id) => {
         try {
             await NotaApi.desarchivarNota(id);
-            // Vuelve a cargar las notas después de archivar
+            
             cargarNotas();
         } catch (error) {
             console.error('Error al archivar la nota', error);
         }
     };
 
-    // const borrarNota = async (id) => {
-    //     try {
-    //         await NotaApi.borrarNota(id);
-    //         cargarNotas();
-    //     } catch (error) {
-    //         console.error('Error al archivar la nota', error);
-    //     }
-    // };
 
     const confirmarEliminarNota = async (id, nombre) => {
         const confirmacion = window.confirm(`¿Estás seguro que deseas eliminar la nota "${nombre}"? Esta acción no se puede revertir.`);

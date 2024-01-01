@@ -97,8 +97,9 @@ export default function ListadoNotas() {
                 </ul>
               </div>
             </div>
-            <div className="card-body">
-              <p className="card-text">{nota.contenido}</p>
+            
+            <div className="card-body ">
+              <p className="card-text ">{nota.contenido}</p>
             </div>
           </div>
         ))}

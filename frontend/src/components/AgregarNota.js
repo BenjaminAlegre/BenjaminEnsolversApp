@@ -59,7 +59,7 @@ const AgregarNota = ({ cerrarFormulario, cargarNotas }) => {
         </label>
         <input
           type="text"
-          className="form-control form-control-lg"
+          className="form-control form-control-lg "
           
           id="contenido"
           name="contenido"

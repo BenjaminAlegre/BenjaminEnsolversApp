@@ -35,6 +35,23 @@ body {
     margin: 50px;
     background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
   }
+
+  .listado-notas-container::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra */
+    height: 10px; /* Altura de la barra */
+    background-color: #f5f5f5; /* Color de fondo */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .listado-notas-container::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color del botón deslizante */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+
+  .scroll-container {
+    max-height: 500px;
+    overflow-y: auto;
+  }
   
   .card-text {
     
@@ -99,4 +116,6 @@ body {
     .btn-filtro{
         color:rgb(221, 94, 137);
     }
+
+ 
     

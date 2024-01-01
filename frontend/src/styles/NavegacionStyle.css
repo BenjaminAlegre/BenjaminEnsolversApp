@@ -1,8 +1,9 @@
 nav {
-    background-color: #fad787; 
+    background-color: #fed77d; 
     border-bottom: 1px solid #dddddd00;
     box-shadow: 0 2px 4px rgba(81, 31, 31, 0.775);
-
+    color: #cc18ba;
+    
   }
   
   .navbar-brand,
@@ -10,8 +11,39 @@ nav {
     color: #333;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
   }
   
   .navbar-nav .nav-link.active {
     color: #000000;
   }
+
+  .nav-link.active:hover {
+    text-decoration:dashed;
+    color: rgb(226, 17, 17);
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.nav-link.active::before {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: yellowgreen;
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  transition: 0.4s ease-out;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #000; /* Color del texto en estado normal */
+  transition: color 0.3s ease-in-out; /* Transición suave de color */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: rgb(171, 0, 80); /* Color del texto al pasar el mouse */
+}

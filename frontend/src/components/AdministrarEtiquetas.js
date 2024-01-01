@@ -7,7 +7,6 @@ import "../styles/Etiquetas.css";
 export default function AdministrarEtiquetas() {
     const [etiquetas, setEtiquetas] = useState([]);
     const [etiquetasDisponibles, setEtiquetasDisponibles] = useState([]);
-    // const [etiquetasSeleccionadas, setEtiquetasSeleccionadas] = useState([]);
 
     const {id} =useParams();
    
@@ -37,22 +36,6 @@ export default function AdministrarEtiquetas() {
             console.error('Error al cargar las etiquetas disponibles', error);
         }
     };
-
-  //   const handleEtiquetasChange = (event) => {
-  //     const selectedOptions = Array.from(event.target.selectedOptions, (option) => option.value);
-  //     setEtiquetasSeleccionadas(selectedOptions);
-  // };
-  
-  // const agregarEtiquetasANota = async () => {
-  //     try {
-  //         await NotaApi.agregarEtiquetas(id, etiquetasSeleccionadas);
-  //         cargarEtiquetas(); // Vuelve a cargar las etiquetas asociadas después de agregar nuevas
-  //         cargarEtiquetasDisponibles(); // Vuelve a cargar las etiquetas disponibles después de agregar nuevas
-  //     } catch (error) {
-  //         console.error('Error al agregar etiquetas a la nota', error);
-  //     }
-  // };
-
 
     return (
       <div className="container listado-notas-container">
